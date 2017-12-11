@@ -98,8 +98,10 @@ public class CartActivity extends AppCompatActivity {
                 CartActivity.items = 0;
                 CartActivity.total = 0;
 
+                if (LogInActivity.logInOn){
                 Intent finishedActivity = new Intent(getApplicationContext(), FinishedActivity.class);
                 startActivity(finishedActivity);
+                }
             }
         });
     }

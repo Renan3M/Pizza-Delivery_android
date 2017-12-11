@@ -74,7 +74,7 @@ public class AdmClientList extends AppCompatActivity {
 
             }
         });
-        
+
     }
 
     private List<Map<String, Object>> listingClientsInfo() {
