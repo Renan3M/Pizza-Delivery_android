@@ -7,6 +7,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
 
+import com.infnet.ads.projetodebloco.Activities.HistoricalActivity;
 import com.infnet.ads.projetodebloco.Activities.ProductActivity;
 import com.infnet.ads.projetodebloco.Products.Product;
 import com.infnet.ads.projetodebloco.Products.ProductOrdered;
@@ -48,7 +49,7 @@ public class AdmClientItemList extends AppCompatActivity {
     private List<Map<String, Object>> listingClientsInfo() {
         products = new ArrayList<>();
 
-        for (ProductOrdered productOrdered : productOrderedList) {
+        for (ProductOrdered productOrdered : HistoricalActivity.productOrderedList) {
             Map<String, Object> item = new HashMap<>();
 
             item.put("name", "Nome da pizza: " + productOrdered.nameOrdered);

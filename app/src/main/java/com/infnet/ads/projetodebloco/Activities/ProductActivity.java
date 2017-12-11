@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.CardView;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
@@ -24,6 +25,7 @@ public class ProductActivity extends AppCompatActivity {
     //PRODUCT ORDERED
     ProductOrdered productOrdered;
     public static List<ProductOrdered> productOrderedList = new ArrayList<>();
+
     //GET INTENT
     Product product;
     int tempPrice;
@@ -264,8 +266,11 @@ public class ProductActivity extends AppCompatActivity {
                     productOrdered.psOrdered = psTextProduct.getText().toString();
 
                     ProductActivity.productOrderedList.add(productOrdered);
+                    HistoricalActivity.productOrderedList.add(productOrdered);
                     ++ CartActivity.items;
                     CartActivity.total += tempPrice;
+
+                    Log.e("Product",String.valueOf(HistoricalActivity.productOrderedList.size()));
 
                     Intent cartActivity = new Intent(getApplicationContext(), CartActivity.class);
                     cartActivity.putExtra("confirmation", (Serializable) productOrderedList);

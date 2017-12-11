@@ -57,9 +57,9 @@ public class AdmClientList extends AppCompatActivity {
 
         list = findViewById(R.id.my_list_view_adm);
 
-        String[] from = {"name", "numberOrders", "totalValue", "addressCombined"};
+        String[] from = {"name", "numberOrders", "totalValue", "addressCombined", "image"};
 
-        int[] to = {R.id.nameOfTheClient, R.id.numberOfOrders, R.id.valueOfTheBought, R.id.addressOfTheClient};
+        int[] to = {R.id.nameOfTheClient, R.id.numberOfOrders, R.id.valueOfTheBought, R.id.addressOfTheClient, R.id.photoBasket};
 
         SimpleAdapter adapter = new SimpleAdapter(this.getApplicationContext(), listingClientsInfo(), R.layout.product_ordered_list_model, from, to);
 
@@ -74,22 +74,7 @@ public class AdmClientList extends AppCompatActivity {
 
             }
         });
-
-
-
-        /*
-        -> A exibição de todos os produtos que o cliente inseriu na Compra deve ser exibida (produto por produto) em um listview
-        após a seleção de qual Compra o adm clicar.
-
-        ArrayList<ProductOrdered> products = CartActivity.productsOrdered;
-        listView = findViewById(R.id.my_list_view_adm);
-
-
-        for ( ProductOrdered product : products ){
-
-        }
-
-        */
+        
     }
 
     private List<Map<String, Object>> listingClientsInfo() {
@@ -118,6 +103,7 @@ public class AdmClientList extends AppCompatActivity {
                     item.put("numberOrders", "Numero de pedidos: "+(String)it.next());
                     item.put("totalValue", "Valor total: " +(String) it2.next());
                     item.put("addressCombined", "Rua: " + streetDb + ", cidade: " + cityDb + " (" + uf + ").");
+                    item.put("image", R.drawable.ic_shopping_basket);
 
                     order.add(item);
                 }

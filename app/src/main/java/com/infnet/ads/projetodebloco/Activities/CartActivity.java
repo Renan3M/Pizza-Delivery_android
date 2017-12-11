@@ -30,11 +30,11 @@ public class CartActivity extends AppCompatActivity {
     public static final String PREFS_NAME = "CartStuff";
 
     // Code stuff
-    List<ProductOrdered> productsOrderedList;
+    private List<ProductOrdered> productsOrderedList;
     public static boolean hasItemCart;
     public static int items;
     public static int total;
-    public static ArrayList<ProductOrdered> productsOrdered;
+
 
     // View stuff
     TextView quantityCart;
@@ -93,6 +93,7 @@ public class CartActivity extends AppCompatActivity {
                 editor.putStringSet("totalSet",totalSet);
                 editor.commit();
 
+                ProductActivity.productOrderedList.clear();
 
                 CartActivity.items = 0;
                 CartActivity.total = 0;

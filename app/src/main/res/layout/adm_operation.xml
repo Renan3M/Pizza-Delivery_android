@@ -36,7 +36,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#482000"
+            android:background="#979797"
             android:orientation="horizontal"
             android:weightSum="3">
 
